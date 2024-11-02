@@ -2,9 +2,6 @@ import cv2 # type: ignore
 import mediapipe as mp # type: ignore
 import time
 
-mpDraw = mp.solutions.drawing_utils
-mpPose = mp.solutions.pose
-pose = mpPose.Pose()
 # static_image_mode=False,
 # model_complexity=1,
 # smooth_landmarks=True,
@@ -12,7 +9,12 @@ pose = mpPose.Pose()
 # smooth_segmentation=True,
 # min_detection_confidence=0.5,
 # min_tracking_confidence=0.5):
+
 class poseDetector():
+    
+    mpDraw = mp.solutions.drawing_utils
+    mpPose = mp.solutions.pose
+    pose = mpPose.Pose()
 
     def __init__(self, mode=False, complex=1, smooth_land=True, upBody = False, smooth_seg = True, detectionCon = 0.5, trackingCon = 0.5):
         self.mode = mode
@@ -62,7 +64,7 @@ def main():
     while True:
         success, img = cap.read()
         img = detector.findPose(img)
-        lmList = detector.findPosition(img)
+        lmList = detector.findPosition(img) # coordinates of 33 landmarks
         print(lmList)
 
         currTime = time.time()
