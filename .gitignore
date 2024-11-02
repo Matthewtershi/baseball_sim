@@ -1,3 +1,4 @@
-venv
+.venv
 pose_videos
 data
+__pycache__
