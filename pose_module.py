@@ -65,15 +65,15 @@ def main():
         lmList = detector.findPosition(img)
         print(lmList)
 
-    currTime = time.time()
-    fps = 1/(currTime-previousTime)
-    previousTime = currTime
+        currTime = time.time()
+        fps = 1/(currTime-previousTime)
+        previousTime = currTime
 
-    cv2.putText(img, str(fps), (70,50), cv2.FONT_HERSHEY_PLAIN, 3,
-                (255, 0, 0), 3)
-    resized_img = cv2.resize(img, (finalw,finalh))
-    cv2.imshow("Image", resized_img)
-    cv2.waitKey(1)
+        cv2.putText(img, str(fps), (70,50), cv2.FONT_HERSHEY_PLAIN, 3,
+                    (255, 0, 0), 3)
+        resized_img = cv2.resize(img, (finalw,finalh))
+        cv2.imshow("Image", resized_img)
+        cv2.waitKey(1)
 
 if __name__ == "__main__":
     main()

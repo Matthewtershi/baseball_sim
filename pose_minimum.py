@@ -7,7 +7,7 @@ mpPose = mp.solutions.pose
 pose = mpPose.Pose()
 
 print("test")
-cap = cv2.VideoCapture("pose_videos/1022.mp4")
+cap = cv2.VideoCapture("pose_videos/1102.mp4")
 previousTime = 0
 finalw = 1280
 finalh = 720
